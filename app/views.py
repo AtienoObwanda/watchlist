@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from .request import get_movies
 
 #Views
 @app.route('/')
@@ -8,10 +9,15 @@ def index():
     '''
     View root page function that returns index page and it's data
     '''
+     #gettin popular movie
+    popular_movies = get_movies('popular')
+    print(popular_movies)
 
-
+    #title
     title = 'Home - Welcome to The best Movie Review Website!'
     return render_template('index.html', title=title)
+
+   
 
 @app.route('/movie/<movie_id>')
 def movie(movie_id):
@@ -20,3 +26,4 @@ def movie(movie_id):
     '''
     title = f'Currently viewing {movie_id}!'
     return render_template('movie.html', title=title)
+

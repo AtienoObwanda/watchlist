@@ -9,7 +9,7 @@ Movie= movie.Movie
 api_key = app.config['MOVIE_API_KEY']
 
 #Getting movie base url 
-base_url = app.config["MOVIE_BASE_URL"]
+base_url = app.config['MOVIE_API_BASE_URL']
 
 def get_movies(category):
     '''
@@ -53,7 +53,7 @@ def get_movies(category):
                 movie_object= Movie(id, title, overview, poster,vote_average, vote_count)
                 
                 movie_results.append(movie_object)
-                
+
             return movie_results
 
     
