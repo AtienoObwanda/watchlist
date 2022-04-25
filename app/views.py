@@ -18,4 +18,5 @@ def movie(movie_id):
     '''
     View movie page function that returns index page and it's data'
     '''
-    return render_template('movie.html',id=movie_id)
+    title = f'Currently viewing {movie_id}!'
+    return render_template('movie.html', title=title)
