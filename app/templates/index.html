@@ -1,3 +1,7 @@
+
+<!--Adding block content-->
+{% extends 'base.html'%}
+
 <!--Adding the macros-->
 {% import 'macros.html' as macro%}
 
@@ -39,24 +43,25 @@
         </ul> -->
  
 <!--With Macros-->
-
-        <!--Popular movies-->
-        <h3> Popular Movies</h3>
-        <ul>
-            {{ macro.displayMovieList(popular)}}
-        </ul>
-
-        <!--Upcoming Movies-->
-        <h3>Upcoming Movies</h3>
-        <ul>
-            {{ macro.displayMovieList(upcoming)}}
-        </ul>
-
-        <!--Now showing movie-->
-        <h3>Now showing Movies</h3>
-        <ul>
-            {{ macro.displayMovieList(now_showing)}}
-        </ul>
-
+    <!--Content block-->
+      {% block content %}
+          <!--Popular movies-->
+          <h3> Popular Movies</h3>
+          <ul>
+              {{ macro.displayMovieList(popular)}}
+          </ul>
+  
+          <!--Upcoming Movies-->
+          <h3>Upcoming Movies</h3>
+          <ul>
+              {{ macro.displayMovieList(upcoming)}}
+          </ul>
+  
+          <!--Now showing movie-->
+          <h3>Now showing Movies</h3>
+          <ul>
+              {{ macro.displayMovieList(now_showing)}}
+          </ul>
+      {% endblock %}
 </body>
 </html>
