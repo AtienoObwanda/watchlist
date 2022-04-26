@@ -1,9 +1,8 @@
 {% macro displayMovieList(movie_list) %}
 
-{% for movie in in movie_list %}
-
-<li>{{ movie.title }}</li>
-
-{% endfor %}
+    {% for movie in movie_list %}
+        <li>{{ movie.title }}</li>
+    {% endfor %}
 
 {% endmacro %}
+
