@@ -1,21 +1,22 @@
-import json
 from app import app
-import urllib.request,json 
+import urllib.request,json
 from .models import movie
 
-Movie= movie.Movie
+Movie = movie.Movie
 
-#Getting the api key
+
+# Getting api key
 api_key = app.config['MOVIE_API_KEY']
 
-#Getting movie base url 
-base_url = app.config['MOVIE_API_BASE_URL']
+# Getting the movie base url
+base_url = app.config["MOVIE_API_BASE_URL"]
+
 
 def get_movies(category):
     '''
-    Function that gets the json response from the url request
+    Function that gets the json responce to our url request
     '''
-    get_movies_url= base_url.format(category,api_key)
+    get_movies_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_movies_url) as url:
         get_movies_data = url.read()
@@ -24,36 +25,31 @@ def get_movies(category):
         movie_results = None
 
         if get_movies_response['results']:
-            movie_results_list=get_movies_response['results']
-            movie_results= process_results(movie_results_list)
+            movie_results_list = get_movies_response['results']
+            movie_results = process_results(movie_results_list)
 
-            return movie_results 
-    
-    def process_results(movie_list):
-        '''
-        Function that processes the movie results and transform them to a list of objects
-        
-        Args:
+
+    return movie_results
+
+
+def process_results(movie_list):
+    '''
+    Function  that processes the movie result and transform them to a list of Objects
+    Args:
         movie_list: A list of dictionaries that contain movie details
-
-        Returns :
+    Returns :
         movie_results: A list of movie objects
-        '''
+    '''
+    movie_results = []
+    for movie_item in movie_list:
+        id = movie_item.get('id')
+        title = movie_item.get('original_title')
+        overview = movie_item.get('overview')
+        poster = movie_item.get('poster_path')
+        vote_average = movie_item.get('vote_average')
+        vote_count = movie_item.get('vote_count')
 
-        movie_results = []
-        for movie_item in movie_list:
-            id = movie_item.get['id']
-            title = movie_item.get['title']
-            overview = movie_item.get['overview']
-            poster = movie_item.get['poster']
-            vote_average = movie_item.get['vote_average']
-            vote_count = movie_item.get['vote_count']
+        movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
+        movie_results.append(movie_object)
 
-            if poster:
-                movie_object= Movie(id, title, overview, poster,vote_average, vote_count)
-                
-                movie_results.append(movie_object)
-
-            return movie_results
-
-    
+    return movie_results
