@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,4 +14,21 @@
 <body>
     <h1> Hello Movie  </h1>
 </body>
-</html>
+</html> -->
+<!--Adding content Block To replace original page-->
+    
+    <!--CONTENT BLOCK-->
+    {% block content %}
+        <div class="container">
+            <!--Poster background-->
+            <div class="row">
+                <div class="col-xs col-sm-6 col-md-6 col-lg-6 posterPath">
+                    <h3>{{ movie.title }}</h3>
+                    <p class="overview"> {{movie.overview}} </p>
+                    <p class="ratings"> <b> {{movie.ratings}} </b> <i>{{ movie.vote_count}} votes </i> </p>
+                </div>
+            </div>
+        </div>
+
+
+    {% endblock %}
