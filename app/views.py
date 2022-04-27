@@ -30,7 +30,7 @@ def movie(id):
     # title = f'Currently viewing {movie_id}'
     # return render_template('movie.html', title=title)
 
-    movie=get_movie(id)
+    movie=get_movie(id) #create a movie object then pass that route into our template file.
     title= f'{movie.title}'
 
     return render_template ('movie.html',title=title,movie=movie )
