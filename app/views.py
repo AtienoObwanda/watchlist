@@ -16,11 +16,15 @@ def index():
     popular_movies = get_movies('popular')
     upcoming_movie = get_movies('upcoming')
     now_showing_movie = get_movies('now_playing')
-    
+
     title = 'Home - Welcome to The best Movie Review Website Online'
-    return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
-    #message='Hello Moringa'
-    # return render_template('demo.html', message=message)
+
+    search_movie = request.args.get('movie_query')
+
+    if search_movie:
+        return redirect(url_for('search',movie_name=search_movie))
+    else:
+        return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
    
 
 @app.route('/movie/<int:id>')
