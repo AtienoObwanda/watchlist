@@ -12,6 +12,45 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
+    <!--With Macros-->
+
+    <!--Content block-->
+    {% block content %}
+    <!--Popular movies-->
+    <h3> Popular Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(popular)}}
+    </ul>
+
+    <!--Upcoming Movies-->
+    <h3>Upcoming Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(upcoming)}}
+    </ul>
+
+    <!--Now showing movie-->
+    <h3>Now showing Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(now_showing)}}
+    </ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,31 +87,5 @@
                 <li>{{ now_showing_movie.title}}</li>
             {% endfor %}
         </ul> -->
- 
-<!--With Macros-->
-
-    <!--Content block-->
-      {% block content %}
-          <!--Popular movies-->
-          <h3> Popular Movies</h3>
-          <ul>
-              {{ macro.displayMovieList(popular)}}
-          </ul>
-  
-          <!--Upcoming Movies-->
-          <h3>Upcoming Movies</h3>
-          <ul>
-              {{ macro.displayMovieList(upcoming)}}
-          </ul>
-  
-          <!--Now showing movie-->
-          <h3>Now showing Movies</h3>
-          <ul>
-              {{ macro.displayMovieList(now_showing)}}
-          </ul>
-      {% endblock %}
-
-
-
 <!-- </body>
 </html> -->
