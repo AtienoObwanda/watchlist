@@ -21,7 +21,9 @@ def index():
     # return render_template('demo.html', message=message)
    
 
-@app.route('/movie/<movie_id>')
+@app.route('/movie/int:id')
+# @app.route('/movie/<movie_id>')
+
 # def movie(movie_id):
 def movie(id):
     '''
