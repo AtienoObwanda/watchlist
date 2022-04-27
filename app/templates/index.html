@@ -15,39 +15,35 @@
     <!--With Macros-->
 
     <!--Content block-->
-    {% block content %}
-    <!--Popular movies-->
-    <h3> Popular Movies</h3>
-    <ul>
-        {{ macro.displayMovieList(popular)}}
-    </ul>
+{% block content %}
+   <div class="container">
+     <!--Popular movies-->
+    <div class="row">
+        <h3> Popular Movies</h3>
+        <ul>
+            {{ macro.displayMovieList(popular)}}
+        </ul>
+    </div>
+ 
+     <!--Upcoming Movies-->
+     <div class="row">
+        <h3>Upcoming Movies</h3>
+        <ul>
+            {{ macro.displayMovieList(upcoming)}}
+        </ul>
+    </div>
 
-    <!--Upcoming Movies-->
-    <h3>Upcoming Movies</h3>
-    <ul>
-        {{ macro.displayMovieList(upcoming)}}
-    </ul>
+     <!--Now showing movie-->
+     <div class="row">
+        <h3>Now showing Movies</h3>
+        <ul>
+            {{ macro.displayMovieList(now_showing)}}
+        </ul>
+    </div>
 
-    <!--Now showing movie-->
-    <h3>Now showing Movies</h3>
-    <ul>
-        {{ macro.displayMovieList(now_showing)}}
-    </ul>
+
+   </div>
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
