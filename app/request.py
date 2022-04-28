@@ -1,4 +1,4 @@
-from app import app
+# from app import app
 import urllib.request,json
 from .models import Movie
 
@@ -15,6 +15,11 @@ def configure_request(app):
     global api_key,base_url
     api_key = app.config['MOVIE_API_KEY']
     base_url = app.config['MOVIE_API_BASE_URL']
+
+
+
+
+
 
 def get_movies(category):
     '''
@@ -57,6 +62,7 @@ def get_movie(id):
     return movie_object
 
 
+
 def search_movie(movie_name):
     search_movie_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,movie_name)
     with urllib.request.urlopen(search_movie_url) as url:
@@ -71,6 +77,7 @@ def search_movie(movie_name):
 
 
     return search_movie_results
+
 
 
 
@@ -91,7 +98,9 @@ def process_results(movie_list):
         vote_average = movie_item.get('vote_average')
         vote_count = movie_item.get('vote_count')
 
-        movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
-        movie_results.append(movie_object)
+        if poster:
+
+            movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
+            movie_results.append(movie_object)
 
     return movie_results
