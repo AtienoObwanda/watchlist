@@ -16,7 +16,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-   pass
+pass
 
 
 class DevConfig(Config):
@@ -26,7 +26,7 @@ class DevConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
 
-    DEBUG = True
+DEBUG = True
 
 config_options = { #dictionary of config options to help us access different configuration option classes
     'development':DevConfig,
