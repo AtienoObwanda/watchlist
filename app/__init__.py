@@ -15,6 +15,8 @@ def create_app(config_name): # function that takes the configuration setting key
     # Initializing flask extension
     bootstrap.init_app(app)
 
-    # we'll add views and the form
+    # Registering blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
     return app
