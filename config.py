@@ -27,7 +27,7 @@ class DevConfig(Config):
 
     DEBUG = True
 
-config_options={
+config_options={ #dictionary of config options to help us access different configuration option classes
     'development' : DevConfig,
     'production' : ProdConfig
 }
