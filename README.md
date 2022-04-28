@@ -68,7 +68,13 @@ atom .
 ****
 
 *Python3.9.10*<br />
-*Flask2.11*
+*Flask2.11*<br />
+
+**WakaTime Statistics**<br />
+*Total coding time:* <br />
+![Alt text](/screenshots/stats.png?raw=true "Optional Title")
+
+
 
 **Contact**
 ****
