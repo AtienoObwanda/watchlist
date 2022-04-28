@@ -10,7 +10,7 @@
 <!-- Content block -->
 {% block content %}
 
-<div class="container-fluid height-200px" style="background-image: url(../static/bg.jpg); width:90%;height: 500px; margin-top:-10em;">
+<div class="container-fluid height-200px" style="background-image: url(../static/bg.jpg);height: 500px; margin-top:-10em;">
 <div class="row">
 <h1 style="font-weight: 800; color: #fff; padding-top: 5em; padding-left: 1em;">Welcome.</h1>
 <div class="row" style="height:20px;"> </div>
@@ -32,31 +32,32 @@
 </div>
 </div>
 
-<div class="container">
-
-    <!-- Popular movie -->
-    <div class="row">
-        <h3> Popular Movies</h3>
+<div class="container-fluid" style="background-color: #000;">
+    <div class="container">
+        <!-- Popular movie -->
+    <div class="row" style="margin-bottom:2em;">
+        <h3 style="font-weight:900; color:#fff"> What's popular Movies</h3>
         <ul>
             {{ macro.displayMovieList(popular)}}
         </ul>
     </div>
     <!-- Upcoming movie  -->
-    <div class="row">
+    <div class="row"style="margin-bottom:2em;">
 
-        <h3> Upcoming Movies </h3>
+        <h3 style="font-weight:900; color:#fff"> Upcoming Movies </h3>
         <ul>
             {{ macro.displayMovieList(upcoming)}}
         </ul>
     </div>
 
     <!-- Now showing movie -->
-    <div class="row">
+    <div class="row" style="margin-bottom:2em;">
 
-        <h3>Now Showing</h3>
+        <h3 style="font-weight:900; color:#fff">Now Showing</h3>
         <ul>
             {{ macro.displayMovieList(now_showing)}}
         </ul>
+    </div>
     </div>
 
 </div>
