@@ -18,7 +18,7 @@ git clone git@github.com:AtienoObwanda/watchlist.git
 *Once the program has been cloned, run this on your terminal* <br />
 
 ```
-cd PasswordLocker
+cd Watchlist
 ```
 
 <br />
