@@ -54,5 +54,5 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255))
 
-    def __repr__(self):
+    def __repr__(self): #makes it easier to debug the program
         return f'User{self.username}'
