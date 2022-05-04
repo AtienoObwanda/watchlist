@@ -1,4 +1,4 @@
-# from . import db
+from . import db
 
 class Movie:
     '''
@@ -49,10 +49,10 @@ class Review:
         return response
 
 
-# class User(db.Model):
-#     __tablename__ = 'users'
-#     id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(255))
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer,primary_key = True)
+    username = db.Column(db.String(255))
 
-#     def __repr__(self): #makes it easier to debug the program
-#         return f'User{self.username}'
+    def __repr__(self):
+        return f'User {self.username}'
