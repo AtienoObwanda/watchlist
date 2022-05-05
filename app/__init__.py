@@ -41,7 +41,7 @@ def create_app(config_name): # function that takes the configuration setting key
     
     # blueprint instance
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/authenticate') # argument that will add a prefix to all the routes registered with that blueprint. 
+    app.register_blueprint(auth_blueprint, url_prefix='/auth') # argument that will add a prefix to all the routes registered with that blueprint. 
 
     # configure UploadSet
     configure_uploads(app,photos)
